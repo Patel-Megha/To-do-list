@@ -6,7 +6,17 @@ const connectDB = require("./config/db");
 connectDB();
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // frontend local
+      "https://your-frontend.vercel.app", // frontend production
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/auth", require("./routes/authRoutes"));

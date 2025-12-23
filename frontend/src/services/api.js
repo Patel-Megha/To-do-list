@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // src/services/api.js
-const BASE_URL = "http://localhost:5000"; // Change to your backend URL
+const BASE_URL = import.meta.env.VITE_API_URL; // Change to your backend URL
 
 const API = {
   get: (url) =>
