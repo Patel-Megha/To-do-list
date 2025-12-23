@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // frontend local
-      "https://your-frontend.vercel.app", // frontend production
+      "https://to-do-list-9odj.vercel.app/", // frontend production
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
