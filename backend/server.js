@@ -11,7 +11,7 @@ app.use(
     origin: function (origin, callback) {
       const allowedOrigins = [
         "http://localhost:5173",
-        "https://to-do-list-ten-azure.vercel.app",
+        "https://to-do-list-9odj.vercel.app",
       ];
 
       if (!origin || allowedOrigins.includes(origin)) {
