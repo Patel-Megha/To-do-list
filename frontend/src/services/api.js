@@ -20,6 +20,16 @@ const API = {
       body: JSON.stringify(data),
     }).then((res) => res.json()),
 
+  put: (url, data) =>
+    fetch(`${BASE_URL}${url}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json()),
+
   delete: (url) =>
     fetch(`${BASE_URL}${url}`, {
       method: "DELETE",

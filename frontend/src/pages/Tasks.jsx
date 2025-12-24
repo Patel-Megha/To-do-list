@@ -42,12 +42,13 @@ const Tasks = () => {
     }
   };
 
-  const toggleTask = async (id, completed) => {
+  const editTask = async (id, updatedData) => {
     try {
-      await API.put(`/tasks/${id}`, { completed });
+      await API.put(`/tasks/${id}`, updatedData);
       fetchTasks();
     } catch (error) {
-      console.error("Failed to toggle task");
+      alert("Failed to update task");
+      console.error("Failed to edit task");
     }
   };
 
@@ -80,7 +81,7 @@ const Tasks = () => {
             <button
               onClick={createTask}
               disabled={loading || !title.trim()}
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50"
+              className="bg-linear-to-r cursor-pointer from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50"
             >
               <Plus className="w-5 h-5" />
               <span>Add Task</span>
@@ -101,7 +102,7 @@ const Tasks = () => {
                 key={task._id}
                 task={task}
                 onDelete={deleteTask}
-                onToggle={toggleTask}
+                onEdit={editTask}
               />
             ))
           )}

@@ -29,4 +29,4 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/tasks", require("./routes/taskRoutes"));
 
 module.exports = app;
-// app.listen(5000, () => console.log("Server running on port 5000"));
+// app.listen(4000, () => console.log("Server running on port 4000"));
